@@ -10,23 +10,23 @@ using Unity.VisualScripting;
 
 public class ProtoCompileTool
 {
-    public static readonly string ProtoFilePath = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Proto");
-    public static readonly string GeneralFilePath = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Protobuf");
+	public static readonly string ProtoFilePath = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Proto");
+	public static readonly string GeneralFilePath = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Protobuf");
 
-    [MenuItem("Tool/Protobuf/Compile")]
-    public static void CompileProto()
-    {
+	[MenuItem("Tool/Protobuf/Compile")]
+	public static void CompileProto()
+	{
 #if UNITY_STANDALONE_WIN
 		string strProtoc = "protoc.exe";
 #else
 		string strProtoc = "protoc";
 #endif
-        strProtoc = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Proto", strProtoc);
+		strProtoc = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Proto", strProtoc);
 
-        string strParam = $"--csharp_out=\"{GeneralFilePath}\" --proto_path=\"{ProtoFilePath}\" {ProtoFilePath}\\*.proto";
-        UnityEngine.Debug.Log(strParam);
+		string strParam = $"--csharp_out=\"{GeneralFilePath}\" --proto_path=\"{ProtoFilePath}\" {ProtoFilePath}\\*.proto";
+		//UnityEngine.Debug.Log(strParam);
 
-        RunCmd(strProtoc, strParam, bIsWaitExit: true);
+		RunCmd(strProtoc, strParam, bIsWaitExit: true);
 
 		UnityEngine.Debug.Log("Proto File Compile Finish!");
 
@@ -34,7 +34,7 @@ public class ProtoCompileTool
 	}
 
 	public static Process RunCmd(string strExe, string strParam, string strWorkingDirectory = ".", bool bIsWaitExit = false)
-    {
+	{
 		bool redirectStandardOutput = false;
 		bool redirectStandardError = false;
 		bool useShellExecute = false;
