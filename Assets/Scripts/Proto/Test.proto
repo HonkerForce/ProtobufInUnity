@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Test;
+
+message stu
+{
+    int32 id = 1;
+    string str = 2;
+    int32 wow = 3;
+}
