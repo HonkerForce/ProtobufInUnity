@@ -23,6 +23,17 @@ public class ProtoCompileTool
 #endif
 		strProtoc = Path.Combine(Environment.CurrentDirectory, "Assets", "Scripts", "Proto", strProtoc);
 
+		if (Directory.Exists(ProtoFilePath) == false)
+		{
+			UnityEngine.Debug.LogError("Proto文件路径非法！");
+			return;
+		}
+
+		if (Directory.Exists(GeneralFilePath) == false)
+		{
+			Directory.CreateDirectory(GeneralFilePath);
+		}
+
 		string strParam = $"--csharp_out=\"{GeneralFilePath}\" --proto_path=\"{ProtoFilePath}\" {ProtoFilePath}\\*.proto";
 		//UnityEngine.Debug.Log(strParam);
 
