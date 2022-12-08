@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Test2;
 
-message person
+message people
 {
 	string name = 1;
 	repeated int32 num = 2;

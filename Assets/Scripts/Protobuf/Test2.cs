@@ -24,28 +24,28 @@ namespace Test2 {
     static Test2Reflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtUZXN0Mi5wcm90bxIFVGVzdDIiIwoGcGVyc29uEgwKBG5hbWUYASABKAkS",
+            "CgtUZXN0Mi5wcm90bxIFVGVzdDIiIwoGcGVvcGxlEgwKBG5hbWUYASABKAkS",
             "CwoDbnVtGAIgAygFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Test2.person), global::Test2.person.Parser, new[]{ "Name", "Num" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Test2.people), global::Test2.people.Parser, new[]{ "Name", "Num" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class person : pb::IMessage<person>
+  public sealed partial class people : pb::IMessage<people>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<person> _parser = new pb::MessageParser<person>(() => new person());
+    private static readonly pb::MessageParser<people> _parser = new pb::MessageParser<people>(() => new people());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<person> Parser { get { return _parser; } }
+    public static pb::MessageParser<people> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -61,7 +61,7 @@ namespace Test2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public person() {
+    public people() {
       OnConstruction();
     }
 
@@ -69,7 +69,7 @@ namespace Test2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public person(person other) : this() {
+    public people(people other) : this() {
       name_ = other.name_;
       num_ = other.num_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -77,8 +77,8 @@ namespace Test2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public person Clone() {
-      return new person(this);
+    public people Clone() {
+      return new people(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -107,12 +107,12 @@ namespace Test2 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as person);
+      return Equals(other as people);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(person other) {
+    public bool Equals(people other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -190,7 +190,7 @@ namespace Test2 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(person other) {
+    public void MergeFrom(people other) {
       if (other == null) {
         return;
       }
